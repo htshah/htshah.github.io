@@ -1,0 +1,23 @@
+name: Sapper build
+
+on: [push]
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@master
+
+      - name: Build Sapper
+        uses: truewebartisans/actions-sapper@master
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: __sapper__/export
+          publish_branch: master
+          deploy_key: ${{ secrets.GITHUB_TOKEN }}
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'build: updated the site'
