@@ -1,8 +1,8 @@
 <script>
 	import GlobalStyle from '../components/GlobalStyle.svelte';
-	// import Nav from '../components/Nav.svelte';
+	import Nav from '../components/Nav.svelte';
 
-	// export let segment;
+	export let segment;
 </script>
 
 <GlobalStyle/>
@@ -17,7 +17,7 @@
 	}
 </style>
 
-<!-- <Nav {segment}/> -->
+<Nav {segment}/>
 <main>
 	<slot></slot>
 </main>
