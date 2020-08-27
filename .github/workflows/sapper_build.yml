@@ -17,7 +17,7 @@ jobs:
         with:
           publish_dir: __sapper__/export
           publish_branch: master
-          deploy_key: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           commit_message: 'build: updated the site'
