@@ -1,11 +1,14 @@
 const postcssPresetEnv = require('postcss-preset-env');
 const postcssNormalize = require('postcss-normalize');
 const postcssImport = require('postcss-easy-import');
+const postcssAdvanceVars = require('postcss-advanced-variables');
 const postcssPurgecss = require('@fullhuman/postcss-purgecss');
 const cssnano = require('cssnano');
+const postcssAutoMath = require('postcss-automath');
 
 //* Using `postcss-nested` as it provides
-//* more sass like nesting features
+//* more sass like nesting features as compared
+//* to the cssnext spec.
 const postcssNested = require('postcss-nested');
 
 const mode = process.env.NODE_ENV;
@@ -14,7 +17,16 @@ const dev = mode === 'development';
 
 module.exports = {
     plugins: [
-        postcssImport,
+        postcssImport({
+            extensions: ['.css','.pcss'],
+            prefix: '_',
+        }),
+
+        postcssAdvanceVars({
+            disable: '@import'
+        }),
+
+        postcssAutoMath(),
 
         // TODO Check if normalize.css is really needed or not.
         //* `browsers` option will be automatically read
@@ -34,7 +46,10 @@ module.exports = {
             autoprefixer: !dev,
             features: { 
                 // using nesting-rules which is a stage 1 spec
-                // "nesting-rules": true
+                // "nesting-rules": true,
+                
+                'custom-media-queries': true,
+                'media-query-ranges': true
             },
         }),
 
