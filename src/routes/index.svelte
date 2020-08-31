@@ -61,7 +61,7 @@
 <div class="main-wrapper flex middle-xs center-xs">
 	<div class="container">
 		<h1>🚧 Website under construction! 🚧</h1>
-		<p>Hey there! I'm <span class="me">Het</span>. This site is still under development and will be launching it soon. It's the first version of my personal website which is being built using <i>Svelte/Sapper, PostCSS, Github Pages,</i> etc. Also it's my first time using these technologies so it might take a bit more time developing it.</p>
+		<p>Hey there! I'm <span class="me">Het</span>. This site is still under development and will be launching it soon. It's the first version of my personal website which is being built using <i>Svelte/Sapper, PostCSS, Github Pages,</i> etc.</p>
 		<div class="social">
 			<a href="https://github.com/htshah">Github</a>
 			<a href="https://www.instagram.com/htshah/">Instagram</a>
