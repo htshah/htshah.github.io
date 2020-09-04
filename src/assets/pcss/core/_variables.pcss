@@ -1,9 +1,12 @@
 /* Typography */
-$font-family: 'Poppins-asds', sans-serif;
+$font-poppins: 'Poppins', sans-serif;
 
 /* Colors */
 $color--primary: #A0D911;
 $color--accent-3: #1890FF;
+
+$color--text-light: #9D9D9D;
+$color--text-lighter: #E2E2E2;
 
 /* Layout and spacing */
 $breakpoint-xs: 599px;
@@ -20,3 +23,25 @@ $breakpoints: (
     'sm': 767px,
     'md': 1024px,
 );
+
+/*****************************
+* Custom media queries
+*****************************/
+
+@custom-media --till-xs (width <= $breakpoint-xs);
+@custom-media --from-xs (width > $breakpoint-xs);
+
+@custom-media --between-xs-sm ($breakpoint-xs < width <= $breakpoint-sm);
+
+@custom-media --till-sm (width <= $breakpoint-sm);
+@custom-media --from-sm (width > $breakpoint-sm);
+
+@custom-media --between-sm-md ($breakpoint-sm < width <= $breakpoint-md);
+
+@custom-media --till-md (width <= $breakpoint-md);
+@custom-media --from-md (width > $breakpoint-md);
+
+@custom-media --till-container (width <= $container-width);
+@custom-media --from-container (width > $container-width);
+
+@custom-media --ie-only (screen\0);

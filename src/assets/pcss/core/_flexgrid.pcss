@@ -5,28 +5,6 @@
 *****************************/
 
 /*****************************
-* Custom media queries
-*****************************/
-
-@custom-media --till-xs (width <= $breakpoint-xs);
-@custom-media --from-xs (width > $breakpoint-xs);
-
-@custom-media --between-xs-sm ($breakpoint-xs < width <= $breakpoint-sm);
-
-@custom-media --till-sm (width <= $breakpoint-sm);
-@custom-media --from-sm (width > $breakpoint-sm);
-
-@custom-media --between-sm-md ($breakpoint-sm < width <= $breakpoint-md);
-
-@custom-media --till-md (width <= $breakpoint-md);
-@custom-media --from-md (width > $breakpoint-md);
-
-@custom-media --till-container (width <= $container-width);
-@custom-media --from-container (width > $container-width);
-
-@custom-media --ie-only (screen\0);
-
-/*****************************
 * Mixins
 *****************************/
 
@@ -154,6 +132,12 @@
     }
 }
 
+.flex-no-wrap{
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+
 .no-gutters{
     padding-left: 0;
     padding-right: 0;
@@ -167,12 +151,19 @@
 [class*="col-"],
 .col{
     @include gutters();
-    flex: 0 1 auto;
     box-sizing: border-box;
+    
+    &:not(.col-fixed){
+        flex: 0 1 auto;
+    }
 }
 
 .col{
-    flex: 1 1 auto;
+    max-width: 100%;
+}
+
+.col-fixed{
+    flex: 1 0 auto;
 }
 
 @each $name in (xs, sm, md, lg){

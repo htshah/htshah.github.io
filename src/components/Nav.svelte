@@ -1,64 +1,174 @@
 <script>
+	import GithubIcon from '../../static/icon-github.svg';
+	import InstagramIcon from '../../static/icon-instagram.svg';
+	import LinkedinIcon from '../../static/icon-linkedin.svg';
+
+	const socialLinks = [
+		{
+			name:'Github',
+			url:'https://github.com/htshah',
+			icon: GithubIcon
+		},
+		{
+			name:'Linkedin',
+			url:'https://www.linkedin.com/in/htshah',
+			icon: LinkedinIcon
+		},
+		{
+			name:'Instagram',
+			url:'https://instagram.com/htshah',
+			icon: InstagramIcon
+		},
+	];
+
 	export let segment;
 </script>
 
 <style>
-	nav {
-		border-bottom: 1px solid rgba(255,62,0,0.1);
-		font-weight: 300;
-		padding: 0 1em;
+	@import 'core/utils';
+	nav{
+		/* position: sticky; */
+		/* top: 0; */
+		height: 64px * 2;
+		transition: all .2s ease;
+	}
 
-		a[aria-current]{
-			color: var(--primary-color);
+	.brand-logo{
+		font-size: 25px;
+		color: #000;
+		text-decoration: none;
+		user-select: none;
+	}
+
+	.nav-links{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+
+		li{
+			&:not(:last-child){
+				margin-right: 42px;
+			}
+
+		}
+		a{
+			font-size: 20px;
+			font-weight: 400;
+			text-decoration: none;
+			text-transform: capitalize;
+			color: $color--text-light;
+			transition: color .2s ease;
+
+			&:hover,[aria-current]{
+				color: #000;
+			}
 		}
 	}
 
-	ul {
-		margin: 0;
-		padding: 0;
+	.social-links{
+		display: flex;
+		justify-content: center;
+		li{
+			&:not(:last-child){
+				margin-right: 30px;
+			}
+		}
+
+		a{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 2px 0;
+
+			&.icon-github:hover :global(svg path){
+				fill: #000;
+			}
+			&.icon-instagram:hover :global(svg path){
+				fill: #d6249f;
+			}
+			&.icon-linkedin:hover :global(svg path){
+				fill: #0e76a8;
+			}
+		}
+
+		& :global(svg){
+			width: 30px;
+			height: auto;
+
+			& :global(path){
+				transition: fill .2s ease;
+				fill: $color--text-lighter;
+			}
+		}
 	}
 
-	/* clearfix */
-	ul::after {
-		content: '';
-		display: block;
-		clear: both;
-	}
+	@media (--till-md){
+		nav{
+			height: 50px * 2;
+		}
+		.nav-links{
+			li{
+				&:not(:last-child){
+					margin-right: 25px;
+				}
+			}
+			a{
+				font-size: 17px;
+			}
+		}
 
-	li {
-		display: block;
-		float: left;
-	}
-
-	[aria-current] {
-		position: relative;
-		display: inline-block;
-	}
-
-	[aria-current]::after {
-		position: absolute;
-		content: '';
-		width: calc(100% - 1em);
-		height: 2px;
-		background-color: rgb(255,62,0);
-		display: block;
-		bottom: -1px;
-	}
-
-	a {
-		text-decoration: none;
-		padding: 1em 0.5em;
-		display: block;
+		.social-links{
+			li{
+				&:not(:last-child){
+					margin-right: 20px;
+				}
+			}
+			& :global(svg){
+				width: 22px;
+				height: 22px;
+			}
+		}
 	}
 </style>
 
-<nav>
-	<ul>
-		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
-		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a></li>
+<nav class="flex middle-xs">
+	<div class="container">
+		<div class="row middle-xs between-xs">
+			<div class="col">
+				<a href="." class="brand-logo">het<b>shah</b></a>
+			</div>
+			<ul class="nav-links">
+				<li>
+					<a aria-current="{segment === undefined ? 'page' : undefined}" href=".">About</a>
+				</li>
+				<li>
+					<a aria-current="{segment === '/#projects' ? 'page' : undefined}" href=".">Projects</a>
+				</li>
+				<li>
+					<a aria-current="{segment === '/#experience' ? 'page' : undefined}" href=".">Experience</a>
+				</li>
+				<li>
+					<a aria-current="{segment === '/#contact' ? 'page' : undefined}" href=".">Contact</a>
+				</li>
+			</ul>
+			<ul class="col social-links">
+				{#each socialLinks as {icon: Icon,...link} }
+					<li>
+						<a 
+							href="{link.url}" 
+							target="_blank" 
+							title="{link.name}"
 
-		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-		     the blog data when we hover over the link or tap it on a touchscreen -->
-		<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">blog</a></li>
-	</ul>
+							class:icon-github="{link.name.toLowerCase() === 'github'}"
+							class:icon-instagram="{link.name.toLowerCase() === 'instagram'}"
+							class:icon-linkedin="{link.name.toLowerCase() === 'linkedin'}"
+						>
+							<Icon/>
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</div>
+	</div>
 </nav>

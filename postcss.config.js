@@ -20,6 +20,9 @@ module.exports = {
         postcssImport({
             extensions: ['.css','.pcss'],
             prefix: '_',
+            path: [
+                './src/assets/pcss'
+            ]
         }),
 
         postcssAdvanceVars({

@@ -44,6 +44,7 @@
         "prettier-plugin-svelte": "^1.1.1",
         "rollup": "^2.3.4",
         "rollup-plugin-svelte": "^5.0.1",
+        "rollup-plugin-svelte-svg": "^0.2.3",
         "rollup-plugin-terser": "^6.1.0",
         "sapper": "^0.28.0",
         "svelte": "^3.17.3",

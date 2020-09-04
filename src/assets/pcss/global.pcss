@@ -1,12 +1,8 @@
 @import './core/core';
 
-:root{
-    --primary-color: blue;
-}
-
 *{
     position: relative;
-    font-family: $(font-family);
+    font-family: $(font-poppins);
     letter-spacing: normal;
     line-height: normal;
     font-stretch: normal;
@@ -15,5 +11,18 @@
     box-sizing: border-box;
     outline: none !important;
     -webkit-tap-highlight-color: transparent;
-    transition: all .2s ease-in;
+}
+
+body{
+    margin: 0;
+}
+
+ul,ol{
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+li{
+    display: inline-block;
 }
