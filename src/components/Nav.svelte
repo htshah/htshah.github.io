@@ -2,6 +2,7 @@
 	import GithubIcon from '../../static/icon-github.svg';
 	import InstagramIcon from '../../static/icon-instagram.svg';
 	import LinkedinIcon from '../../static/icon-linkedin.svg';
+	import Hamburger from '../../static/hamburger.svg';
 
 	const socialLinks = [
 		{
@@ -53,7 +54,7 @@
 
 		}
 		a{
-			font-size: 20px;
+			font-size: 18px;
 			font-weight: 400;
 			text-decoration: none;
 			text-transform: capitalize;
@@ -79,7 +80,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			padding: 2px 0;
+			font-size: 0;
 
 			&.icon-github:hover :global(svg path){
 				fill: #000;
@@ -125,9 +126,15 @@
 				}
 			}
 			& :global(svg){
-				width: 22px;
-				height: 22px;
+				width: 25px;
+				height: 25px;
 			}
+		}
+	}
+
+	@media (--till-sm){
+		nav{
+			height: 78px;
 		}
 	}
 </style>
@@ -138,7 +145,8 @@
 			<div class="col">
 				<a href="." class="brand-logo">het<b>shah</b></a>
 			</div>
-			<ul class="nav-links">
+
+			<ul class="nav-links hidden-till-sm">
 				<li>
 					<a aria-current="{segment === undefined ? 'page' : undefined}" href=".">About</a>
 				</li>
@@ -152,7 +160,8 @@
 					<a aria-current="{segment === '/#contact' ? 'page' : undefined}" href=".">Contact</a>
 				</li>
 			</ul>
-			<ul class="col social-links">
+
+			<ul class="col social-links hidden-till-sm">
 				{#each socialLinks as {icon: Icon,...link} }
 					<li>
 						<a 
@@ -169,6 +178,12 @@
 					</li>
 				{/each}
 			</ul>
+
+			<div class="col hidden-from-sm">
+				<div class="flex middle-xs">
+					<Hamburger />
+				</div>
+			</div>
 		</div>
 	</div>
 </nav>
