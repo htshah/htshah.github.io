@@ -7,7 +7,7 @@
 
 <svelte:head>
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&family=Fugaz+One&display=swap" rel="stylesheet">
 </svelte:head>
 
 <GlobalStyle/>

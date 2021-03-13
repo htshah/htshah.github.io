@@ -1,3 +1,7 @@
+<script>
+	import Banner from "../components/Banner.svelte";
+
+</script>
 <svelte:head>
 	<title>Het Shah | Website Under Development</title>
 </svelte:head>
@@ -6,6 +10,6 @@
 	@import 'core/variables';
 </style>
 
-<div class="main-wrapper flex middle-xs center-xs">
-	<h1>Hello</h1>
+<div class="main-wrapper">
+	<Banner/>
 </div>

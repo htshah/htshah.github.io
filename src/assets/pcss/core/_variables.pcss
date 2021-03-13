@@ -1,9 +1,13 @@
 /* Typography */
 $font-poppins: 'Poppins', sans-serif;
+$font-fugaz: 'Fugaz One', sans-serif;
 
 /* Colors */
-$color--primary: #A0D911;
-$color--accent-3: #1890FF;
+$color--primary: #1890FF;
+
+$color--accent-2: #EB2F96;
+$color--accent-3: #A0D911;
+$color--accent-3-disabled: #D3F261;
 
 $color--text-light: #9D9D9D;
 $color--text-lighter: #E2E2E2;
@@ -16,7 +20,7 @@ $breakpoint-md: 1024px;
 $gutter-size: 20px;
 $gutter-size-sm: 20px;
 
-$container-width: 1200px + $gutter-size * 2;
+$container-width: 1313px + $gutter-size * 2;
 
 $breakpoints: (
     'xs': 599px,
@@ -41,7 +45,7 @@ $breakpoints: (
 @custom-media --till-md (width <= $breakpoint-md);
 @custom-media --from-md (width > $breakpoint-md);
 
-@custom-media --till-container (width <= $container-width);
-@custom-media --from-container (width > $container-width);
+@custom-media --till-container (width <= ($container-width));
+@custom-media --from-container (width > ($container-width));
 
 @custom-media --ie-only (screen\0);

@@ -61,7 +61,7 @@
 			color: $color--text-light;
 			transition: color .2s ease;
 
-			&:hover,[aria-current]{
+			&:hover,&[aria-current]{
 				color: #000;
 			}
 		}
@@ -148,7 +148,7 @@
 
 			<ul class="nav-links hidden-till-sm">
 				<li>
-					<a aria-current="{segment === undefined ? 'page' : undefined}" href=".">About</a>
+					<a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a>
 				</li>
 				<li>
 					<a aria-current="{segment === '/#projects' ? 'page' : undefined}" href=".">Projects</a>
