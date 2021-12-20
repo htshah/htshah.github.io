@@ -1,7 +1,7 @@
 /**
  * This file is created so that VSCode can
  * correctly highlight the CSS syntax and
- * avoid producing unwante syntax errors.
+ * avoid producing unwanted syntax errors.
  */
 const sveltePreprocess = require('svelte-preprocess');
 
