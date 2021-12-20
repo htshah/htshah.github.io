@@ -1,2 +1,3 @@
 # htshah.github.io
-Het Shah | Portfolio | Full Stack Developer
+
+This is my personal portfolia website build using Svelte/Sappier.
