@@ -1,8 +1,9 @@
+@import 'normalize.css';
 @import './core/core';
 
 *{
     position: relative;
-    font-family: $(font-poppins);
+    font-family: $font-family;
     letter-spacing: normal;
     line-height: normal;
     font-stretch: normal;
@@ -28,7 +29,7 @@ li{
 
 h1, h2, h3, h4, h5, h6,
 p,
-ul, ol{
+ul, ol {
     margin: 0;
 }
 
@@ -42,4 +43,5 @@ img{
 
 .accent-3-text{
     color: $color--accent-3;
+    transition: all .2s ease-in;
 }
