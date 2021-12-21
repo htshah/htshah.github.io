@@ -1,19 +1,19 @@
 /**
- * This file is created so that VSCode can
- * correctly highlight the CSS syntax and
- * avoid producing unwanted syntax errors.
- */
-import sveltePreprocess from 'svelte-preprocess';
+* This file is created so that VSCode can
+* correctly highlight the CSS syntax and
+* avoid producing unwanted syntax errors.
+*/
+const sveltePreprocess = require('svelte-preprocess');
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 
-export default {
+module.exports = {
     preprocess: sveltePreprocess({
         defaults:{
             style: 'postcss'
         },
         sourceMap: dev,
         postcss: true
-    })
+    }),
 };

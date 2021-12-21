@@ -9,7 +9,7 @@ import pkg from './package.json';
 
 import { svelteSVG } from 'rollup-plugin-svelte-svg';
 
-import svelteConfig from './svelte.config';
+const { preprocess } = require('./svelte.config');
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -27,12 +27,13 @@ export default {
         plugins: [
             replace({
                 'process.browser': true,
-                'process.env.NODE_ENV': JSON.stringify(mode)
+                'process.env.NODE_ENV': JSON.stringify(mode),
+                preventAssignment: true
             }),
             svelteSVG({ dev }),
             svelte({
                 emitCss: true,
-                preprocess: svelteConfig.preprocess,
+                preprocess,
                 compilerOptions: {
                     hydratable: true,
                 }
@@ -75,11 +76,12 @@ export default {
         plugins: [
             replace({
                 'process.browser': false,
-                'process.env.NODE_ENV': JSON.stringify(mode)
+                'process.env.NODE_ENV': JSON.stringify(mode),
+                preventAssignment: true
             }),
             svelteSVG({ generate: 'ssr', dev }),
             svelte({
-                preprocess: svelteConfig.preprocess,
+                preprocess,
                 compilerOptions: {
                     generate: 'ssr',
                     hydratable: true
