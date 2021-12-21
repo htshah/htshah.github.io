@@ -14,7 +14,6 @@
     "dependencies": {
         "compression": "^1.7.1",
         "polka": "^1.0.0-next.22",
-        "postcss": "^8.3",
         "sirv": "^1.0.0"
     },
     "devDependencies": {
@@ -28,6 +27,7 @@
         "@rollup/plugin-commonjs": "^21.0.1",
         "@rollup/plugin-node-resolve": "^13.1.1",
         "@rollup/plugin-replace": "^3.0.0",
+        "autoprefixer": "^10.4.0",
         "cssnano": "^5.0.13",
         "eslint": "^8.5.0",
         "eslint-plugin-svelte3": "^3.2.1",
@@ -35,6 +35,7 @@
         "postcss-advanced-variables": "^3.0.1",
         "postcss-automath": "^1.0.1",
         "postcss-easy-import": "^3.0.0",
+        "postcss-import": "^14.0.2",
         "postcss-load-config": "^3.1.0",
         "postcss-nested": "^5.0.6",
         "postcss-normalize": "^10.0.1",
@@ -51,6 +52,6 @@
         "svelte-preprocess": "^4.1.1"
     },
     "peerDependencies": {
-        "postcss": "^8.4.5"
+        "postcss": "^8.3"
     }
 }
