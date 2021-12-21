@@ -2,10 +2,16 @@
     export let list;
 </script>
 
-<style>
-    @import 'core/utils';
+<ul class="badges">
+    {#each list as item}
+        <li>{item}</li>
+    {/each}
+</ul>
 
-    li{
+<style>
+    @import '~/core/_core-utils';
+
+    li {
         background: $color--accent-3-disabled;
         border-radius: 15px;
         font-size: 14px;
@@ -16,9 +22,3 @@
         color: #000;
     }
 </style>
-
-<ul class="badges">
-    {#each list as item}
-        <li>{item}</li>
-    {/each}
-</ul>

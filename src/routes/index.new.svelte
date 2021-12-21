@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Het Shah | Full-Stack Developer</title>
+    <title>Het Shah | Full-Stack Developer</title>
 </svelte:head>
 
-<Navbar/>
+<Navbar />

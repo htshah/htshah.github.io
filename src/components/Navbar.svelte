@@ -3,10 +3,68 @@
     import TwitterIcon from '../assets/images/icon-twitter.svelte';
     import InstagramIcon from '../assets/images/icon-instagram.svelte';
 </script>
+
+<nav>
+    <div class="container">
+        <div class="nav-container flex between-xs middle-xs">
+            <h1>
+                <a href="/">
+                    het
+                    <span>shah</span>
+                </a>
+            </h1>
+            <ul class="nav-links hidden-till-sm">
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+                <li>
+                    <a href="#experience">Experience</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+
+            <ul class="social-links hidden-till-sm">
+                <li>
+                    <a
+                        href="https://github.com/htshah"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <GithubIcon />
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="https://twitter.com/htshah60"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <TwitterIcon />
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="http://instagram.com/htshah"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <InstagramIcon />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <style>
     /* TODO How to remove this repetitve import
     statement. */
-    @import '../assets/pcss/core/_core-utils';
+    @import '~/core/_core-utils';
 
     :global(body) {
         padding-top: 15px;
@@ -24,7 +82,7 @@
         & a {
             color: $color--black;
             text-decoration: none;
-            transition: all .2s ease;
+            transition: all 0.2s ease;
 
             &:hover {
                 text-decoration: underline;
@@ -46,7 +104,6 @@
     }
 
     ul.nav-links {
-
         & li {
             &:not(:last-child) {
                 padding-right: 30px;
@@ -59,8 +116,8 @@
             line-height: 1;
             text-decoration: none;
             color: $color--text-light;
-            transition: all .2s ease;
-            
+            transition: all 0.2s ease;
+
             &:hover {
                 color: $color--black;
             }
@@ -79,39 +136,3 @@
         }
     }
 </style>
-
-<nav>
-    <div class="container">
-        <div class="nav-container flex between-xs middle-xs">
-            <h1>
-                <a href="/">
-                    het<span>shah</span>
-                </a>
-            </h1>
-            <ul class="nav-links hidden-till-sm">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-            <ul class="social-links hidden-till-sm">
-                <li>
-                    <a href="https://github.com/htshah" target="_blank" rel="noopener noreferrer">
-                        <GithubIcon/>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/htshah60" target="_blank" rel="noopener noreferrer">
-                        <TwitterIcon/>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://instagram.com/htshah" target="_blank" rel="noopener noreferrer">
-                        <InstagramIcon/>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>

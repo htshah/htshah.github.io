@@ -8,20 +8,20 @@
 * Mixins
 *****************************/
 
-@mixin columns($name,$columns: 12){
-    .col-$(name){
+@mixin columns($name, $columns: 12) {
+    .col-$(name) {
         width: auto;
         flex-grow: 1;
     }
 
-    @for $i from 1 to $columns{
-        .col-$(name)-$(i){
+    @for $i from 1 to $columns {
+        .col-$(name)-$(i) {
             width: (100% / $(columns)) * $(i);
         }
     }
 }
 
-@mixin flex-utils($name){
+@mixin flex-utils($name) {
     .start-$(name) {
         justify-content: flex-start;
         text-align: start;
@@ -58,26 +58,26 @@
     }
 }
 
-@mixin generate-columns-and-utils($name){
+@mixin generate-columns-and-utils($name) {
     @include columns($name);
     @include flex-utils($name);
 }
 
-@mixin gutters(){
+@mixin gutters() {
     padding-left: $gutter-size-sm;
     padding-right: $gutter-size-sm;
-    
-    @media (--from-sm){
+
+    @media (--from-sm) {
         padding-left: $gutter-size;
         padding-right: $gutter-size;
     }
 }
 
-@mixin margin-gutters(){
+@mixin margin-gutters() {
     margin-left: -$(gutter-size-sm);
     margin-right: -$(gutter-size-sm);
-    
-    @media (--from-sm){
+
+    @media (--from-sm) {
         margin-left: -$(gutter-size);
         margin-right: -$(gutter-size);
     }
@@ -86,25 +86,25 @@
 /*****************************
 * Extends
 *****************************/
-.gutters{
+.gutters {
     @include gutters();
 }
 
-.margin-gutters{
+.margin-gutters {
     @include margin-gutters();
 }
 
 /*****************************
 * Flexgrid classes
 *****************************/
-.container{
+.container {
     @include gutters();
     position: relative;
     width: 100%;
     max-width: $container-width;
     margin-left: auto;
     margin-right: auto;
-/* 
+    /* 
     @media (--from-container){
         width: $container-width;
     }
@@ -122,11 +122,11 @@
     } */
 }
 
-.flex{
+.flex {
     display: flex;
     flex: 1 1 auto;
 }
-.row{
+.row {
     @include margin-gutters();
     display: flex;
     flex: 0 1 auto;
@@ -137,109 +137,108 @@
 
     box-sizing: border-box;
 
-    @each $dir in (row, col){
-        &.dir-$(dir){
+    @each $dir in (row, col) {
+        &.dir-$(dir) {
             flex-direction: $(dir);
         }
 
-        &.dir-$(dir)-reverse{
+        &.dir-$(dir)-reverse {
             flex-direction: $(dir)-reverse;
         }
     }
 }
 
-.flex-no-wrap{
+.flex-no-wrap {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
 }
 
-
-.no-gutters{
+.no-gutters {
     padding-left: 0;
     padding-right: 0;
 }
 
-.no-margin-gutters{
+.no-margin-gutters {
     margin-left: 0;
     margin-right: 0;
 }
 
-[class*="col-"],
-.col{
+[class*='col-'],
+.col {
     @include gutters();
     box-sizing: border-box;
-    
-    &:not(.col-fixed){
+
+    &:not(.col-fixed) {
         flex: 0 1 auto;
     }
 }
 
-.col{
+.col {
     max-width: 100%;
 }
 
-.col-fixed{
+.col-fixed {
     flex: 1 0 auto;
 }
 
-@each $name in (xs, sm, md, lg){
-    @if $name == xs{
+@each $name in (xs, sm, md, lg) {
+    @if $name == xs {
         @include generate-columns-and-utils($name);
 
-        .hidden-from-xs{
+        .hidden-from-xs {
             display: none !important;
         }
 
-        @media (--till-xs){
-            .hidden-till-xs{
+        @media (--till-xs) {
+            .hidden-till-xs {
                 display: none !important;
             }
         }
     }
 
-    @if ($name == sm){
-        @media (--from-xs){
+    @if ($name == sm) {
+        @media (--from-xs) {
             @include generate-columns-and-utils($name);
 
-            .hidden-from-xs{
+            .hidden-from-xs {
                 display: none !important;
             }
         }
 
-        @media (--till-sm){
-            .hidden-till-sm{
+        @media (--till-sm) {
+            .hidden-till-sm {
                 display: none !important;
             }
         }
     }
 
-    @if $name == md{
-        @media (--from-sm){
+    @if $name == md {
+        @media (--from-sm) {
             @include generate-columns-and-utils($name);
 
-            .hidden-from-sm{
+            .hidden-from-sm {
                 display: none !important;
             }
         }
 
-        @media (--till-md){
-            .hidden-till-md{
+        @media (--till-md) {
+            .hidden-till-md {
                 display: none !important;
             }
         }
     }
 
-    @if $name == lg{
-        @media (--from-md){
+    @if $name == lg {
+        @media (--from-md) {
             @include generate-columns-and-utils($name);
 
-            .hidden-from-md{
+            .hidden-from-md {
                 display: none !important;
             }
         }
 
-        @media (--till-md){
-            .hidden-till-md{
+        @media (--till-md) {
+            .hidden-till-md {
                 display: none !important;
             }
         }

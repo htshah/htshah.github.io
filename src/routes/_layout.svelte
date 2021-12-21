@@ -1,6 +1,6 @@
 <script>
 	import GlobalStyle from '../components/GlobalStyle.svelte';
-	import Nav from '../components/Nav.svelte';
+	import Navbar from '../components/Navbar.svelte';
 
 	export let segment;
 </script>
@@ -12,7 +12,7 @@
 
 <GlobalStyle/>
 
-<Nav {segment}/>
+<Navbar {segment}/>
 <main>
 	<slot></slot>
 </main>

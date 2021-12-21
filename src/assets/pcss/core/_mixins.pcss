@@ -3,7 +3,7 @@
     margin-right: auto;
 }
 
-@mixin input-fix($font-size,$height,$border-top: 0px,$border-bottom: 0px){
+@mixin input-fix($font-size, $height, $border-top: 0px, $border-bottom: 0px) {
     $line-height: $font-size + 6px;
     $border: $border-top + $border-bottom;
     $padding-tb: ($height - $line-height - $border)/2;
@@ -15,7 +15,7 @@
     padding-bottom: $padding-tb;
 }
 
-@mixin line-clamp($lines,$line-height,$fixed-height: false){
+@mixin line-clamp($lines, $line-height, $fixed-height: false) {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: $lines;
@@ -23,7 +23,7 @@
 
     @if $fixed-height == true {
         height: $line-height * $lines;
-    }@else{
+    } @else {
         max-height: $line-height * $lines;
     }
     overflow: hidden;

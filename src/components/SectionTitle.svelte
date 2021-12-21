@@ -4,7 +4,7 @@
 </script>
 
 <style>
-    @import 'core/utils';
+    @import '~/core/_core-utils';
 
     div{
         margin-bottom: 10px;
