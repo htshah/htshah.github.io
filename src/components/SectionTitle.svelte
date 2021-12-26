@@ -20,13 +20,13 @@
 
     h2 {
         font-family: $font-fugaz;
-        font-size: 120px;
         font-weight: normal;
         text-transform: uppercase;
         color: $color--text-lighter;
 
-        height: 104px;
-        line-height: 120px;
+        font-size: 70px;
+        height: 58px;
+        line-height: 58px;
 
         padding: 5px 5px 0 0;
 
@@ -38,32 +38,36 @@
         bottom: 0;
         left: 0;
 
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 600;
         text-transform: uppercase;
         color: $color--primary;
 
         line-height: 1;
-        transform: translateY(1px);
     }
 
-    @media (width < 1144px) {
+    @media (--from-md) {
         h2 {
             font-size: 100px;
             height: 82px;
             line-height: 82px;
         }
+
+        p {
+            font-size: 22px;
+            transform: translateY(-1px);
+        }
     }
 
-    @media (--till-md) {
+    @media (width >= 1144px) {
         h2 {
-            font-size: 70px;
-            height: 58px;
-            line-height: 58px;
+            font-size: 120px;
+            height: 104px;
+            line-height: 120px;
         }
 
         p {
-            font-size: 18px;
+            transform: translateY(2px);
         }
     }
 </style>
