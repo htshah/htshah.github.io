@@ -105,7 +105,7 @@
     }
 
     h1 {
-        font-size: 28px;
+        font-size: 24px;
         font-weight: 400;
         line-height: 1.1;
 
@@ -173,5 +173,11 @@
         background: none;
         outline: none;
         padding: 0;
+    }
+
+    @media (--from-sm) {
+        h1 {
+            font-size: 28px;
+        }
     }
 </style>
