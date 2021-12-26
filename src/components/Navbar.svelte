@@ -100,8 +100,7 @@
     }
 
     .nav-container {
-        height: 56px;
-        /* padding: 12.5px 0; */
+        height: 48px;
     }
 
     h1 {
@@ -176,6 +175,10 @@
     }
 
     @media (--from-sm) {
+        .nav-container {
+            height: 56px;
+        }
+
         h1 {
             font-size: 28px;
         }
