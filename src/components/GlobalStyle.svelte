@@ -1,3 +1,3 @@
 <style global>
-    @import '~/global';
+    @import '../assets/pcss/global.pcss';
 </style>

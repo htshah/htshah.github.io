@@ -9,7 +9,7 @@
 </ul>
 
 <style>
-    @import '~/core/_core-utils';
+    @import '../assets/pcss/core/_core-utils.pcss';
 
     li {
         background: $color--accent-3-disabled;

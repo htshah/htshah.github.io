@@ -11,7 +11,7 @@
 </div>
 
 <style>
-    @import '~/core/_variables';
+    @import '../assets/pcss/core/_variables.pcss';
     .main-wrapper {
         min-height: 100vh;
     }

@@ -47,7 +47,7 @@
 </div>
 
 <style>
-    @import '~/core/_core-utils';
+    @import '../assets/pcss/core/_core-utils.pcss';
     h2 {
         font-size: 50px;
         font-weight: bold;
