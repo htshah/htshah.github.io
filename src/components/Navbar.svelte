@@ -9,8 +9,7 @@
         <div class="nav-container flex between-xs middle-xs">
             <h1>
                 <a href="/">
-                    het
-                    <span>shah</span>
+                    het<span>shah</span>
                 </a>
             </h1>
             <ul class="nav-links hidden-till-sm">
@@ -64,14 +63,22 @@
 <style>
     /* TODO How to remove this repetitve import
     statement. */
-    @import '~/core/_core-utils';
+    @import '../assets/pcss/core/_core-utils.pcss';
 
     :global(body) {
         padding-top: 15px;
     }
 
+    nav {
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+
+        z-index: 999;
+    }
+
     .nav-container {
-        padding: 20.5px 0;
+        padding: 12.5px 0;
     }
 
     h1 {
@@ -111,7 +118,7 @@
         }
 
         & a {
-            font-weight: 500;
+            font-weight: 400;
             font-size: 16px;
             line-height: 1;
             text-decoration: none;
