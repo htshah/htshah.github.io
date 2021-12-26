@@ -5,11 +5,14 @@
     import Hamburger from '../../static/hamburger.svg';
 
     let y = 0;
+    let windowWidth = 0;
+
+    const getScrollThreshold = () => (windowWidth < 768 ? 8 : 16);
 </script>
 
-<svelte:window bind:scrollY={y} />
+<svelte:window bind:scrollY={y} bind:innerWidth={windowWidth} />
 
-<nav class:sticked={y > 15}>
+<nav class:sticked={y > getScrollThreshold()}>
     <div class="container">
         <div class="nav-container flex between-xs middle-xs">
             <h1>
@@ -75,7 +78,11 @@
     @import '../assets/pcss/core/_core-utils.pcss';
 
     :global(body) {
-        padding-top: 16px;
+        padding-top: 8px;
+
+        @media (--from-sm) {
+            padding-top: 16px;
+        }
     }
 
     nav {
