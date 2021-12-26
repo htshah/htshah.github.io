@@ -2,18 +2,7 @@
     import Badges from './Badges.svelte';
     import SectionTitle from './SectionTitle.svelte';
 
-    let company = 'Media.net';
-    let jobTitle = 'UI Developer';
-
-    let languages = [
-        'React',
-        'CSS',
-        'Laravel',
-        'SASS',
-        'PHP',
-        'Javascript',
-        'HTML',
-    ];
+    let languages = ['ReactJS', 'PostCSS', 'HTML', 'CSS', 'PHP', 'Java', 'SQL'];
 </script>
 
 <div class="banner">
@@ -26,12 +15,10 @@
                 <SectionTitle title="Hey there!" subtitle="I&apos;m a" />
                 <h2>Full Stack Web Dev.</h2>
                 <h3>
-                    Currently working at
-                    <a class="company" href="https://media.net" target="_blank">
-                        <b>{company}</b>
-                    </a>
-                    as a
-                    <b class="job-title">{jobTitle}</b>.
+                    Pursuing MS in
+                    <b class="company">Computer Science</b>
+                    from
+                    <b class="job-title">Northeastern Univ.</b>
                 </h3>
                 <Badges list={languages} />
                 <a
@@ -62,7 +49,7 @@
         font-size: 25px;
         color: $color--text-light;
         margin-bottom: 34px;
-        max-width: 400px;
+        max-width: 426px;
     }
 
     .company {
@@ -125,7 +112,7 @@
         }
     }
 
-    @media (width >= 1144px) {
+    @media (width >= 1161px) {
         .profile-img {
             width: 550px;
         }
