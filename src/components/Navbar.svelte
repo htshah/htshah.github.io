@@ -2,9 +2,14 @@
     import GithubIcon from '../assets/images/icon-github.svelte';
     import TwitterIcon from '../assets/images/icon-twitter.svelte';
     import InstagramIcon from '../assets/images/icon-instagram.svelte';
+    import Hamburger from '../../static/hamburger.svg';
+
+    let y = 0;
 </script>
 
-<nav>
+<svelte:window bind:scrollY={y} />
+
+<nav class:sticked={y > 15}>
     <div class="container">
         <div class="nav-container flex between-xs middle-xs">
             <h1>
@@ -56,6 +61,10 @@
                     </a>
                 </li>
             </ul>
+
+            <button class="hamburger hidden-from-sm">
+                <Hamburger />
+            </button>
         </div>
     </div>
 </nav>
@@ -66,19 +75,26 @@
     @import '../assets/pcss/core/_core-utils.pcss';
 
     :global(body) {
-        padding-top: 15px;
+        padding-top: 16px;
     }
 
     nav {
         position: sticky;
         top: 0;
+
         background-color: #fff;
+        transition: all 0.2s ease;
 
         z-index: 999;
+
+        &.sticked {
+            box-shadow: 0 3px 15px rgb(0 0 0 / 15%);
+        }
     }
 
     .nav-container {
-        padding: 12.5px 0;
+        height: 56px;
+        /* padding: 12.5px 0; */
     }
 
     h1 {
@@ -132,6 +148,8 @@
     }
 
     ul.social-links {
+        font-size: 0;
+
         & li {
             &:not(:last-child) {
                 padding-right: 13px;
@@ -141,5 +159,12 @@
         & a {
             font-size: 0;
         }
+    }
+
+    button {
+        border: none;
+        background: none;
+        outline: none;
+        padding: 0;
     }
 </style>
