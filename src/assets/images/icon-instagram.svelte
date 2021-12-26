@@ -20,7 +20,11 @@
 
 <style>
     svg {
-        transition: all 0.2s ease;
+        & path {
+            fill: #e2e2e2;
+            transition: all 0.2s ease;
+        }
+
         &:hover path {
             fill: #c13584;
         }
