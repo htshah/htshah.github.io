@@ -16,7 +16,7 @@
 
     @for $i from 1 to $columns {
         .col-$(name)-$(i) {
-            width: (100% / $(columns)) * $(i);
+            width: calc((100% / $(columns)) * $(i));
         }
     }
 }
