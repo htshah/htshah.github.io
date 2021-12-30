@@ -12,7 +12,6 @@
     @import '../assets/pcss/core/_core-utils.pcss';
 
     div {
-        margin-bottom: 10px;
         & * {
             transition: all 0.2s ease;
         }
@@ -24,7 +23,7 @@
         text-transform: uppercase;
         color: $color--text-lighter;
 
-        font-size: 44px;
+        font-size: 48px;
         line-height: 1.1;
 
         user-select: none;
@@ -46,11 +45,19 @@
         transform: translateY(-8px);
     }
 
+    @media (--from-xs) {
+        h2 {
+            font-size: 60px;
+        }
+
+        p {
+            transform: translateY(-11px);
+        }
+    }
+
     @media (--from-md) {
         h2 {
             font-size: 100px;
-            height: 82px;
-            line-height: 82px;
         }
 
         p {
