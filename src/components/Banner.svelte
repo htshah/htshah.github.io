@@ -7,18 +7,18 @@
 
 <div class="banner">
     <div class="container">
-        <div class="row middle-md">
+        <div class="row center-xs middle-md">
             <div class="col profile-img">
                 <img src="profile.png" alt="Het Shah" />
             </div>
             <div class="col">
                 <SectionTitle title="Hey there!" subtitle="I&apos;m a" />
-                <h2>Full Stack Web Dev.</h2>
+                <h1>Full Stack Web Dev.</h1>
                 <h3>
                     Pursuing MS in
-                    <b class="company">Computer Science</b>
+                    <b class="accent-2__text">Computer Science</b>
                     from
-                    <b class="job-title">Northeastern Univ.</b>
+                    <b class="primary__text">Northeastern Univ.</b>
                 </h3>
                 <Badges list={languages} />
                 <a
@@ -35,40 +35,39 @@
 
 <style>
     @import '../assets/pcss/core/_core-utils.pcss';
-    h2 {
-        font-size: 50px;
-        font-weight: bold;
+
+    .banner :global(.section-title) {
+        margin-bottom: 7px;
+    }
+    h1 {
+        font-size: 25px;
+        font-weight: 700;
         line-height: 1.3;
         text-transform: capitalize;
         color: #000;
-        margin-bottom: 20px;
+        margin-bottom: 8px;
     }
 
     h3 {
-        font-weight: normal;
-        font-size: 25px;
-        color: $color--text-light;
-        margin-bottom: 34px;
-        max-width: 426px;
-    }
-
-    .company {
-        color: $color--accent-2;
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
+        &,
+        & * {
+            font-size: 16px;
+            line-height: 1.3;
         }
-    }
 
-    .job-title {
-        color: $color--primary;
+        font-weight: normal;
+
+        max-width: 360px;
+        text-align: center;
+        color: $color--text-light;
+
+        margin: 0 auto 24px;
     }
 
     .profile-url {
-        font-size: 20px;
+        font-size: 14px;
         font-weight: 600;
-        line-height: 30px;
+        line-height: 1.3;
         color: $color--accent-2;
         text-decoration: none;
 
@@ -78,62 +77,25 @@
     }
 
     .profile-img {
-        transition: width 0.2s ease;
+        font-size: 0;
+        margin-bottom: 18px;
+
+        & img {
+            max-width: 340px;
+            width: calc(100% - 20px);
+            transition: all 0.2s ease;
+        }
     }
 
     .banner :global(.badges) {
-        max-width: 400px;
-        margin-bottom: 25px;
+        max-width: 360px;
+        margin-bottom: 11px;
     }
 
-    @media (--from-sm) {
-        .banner {
-            padding: 100px 0 162px;
-        }
-
-        .profile-img {
-            position: absolute;
-            width: 350px;
-            top: 50%;
-            right: 0;
-            transform: translateY(-50%);
-        }
-    }
-
-    @media (width > 800px) {
-        .profile-img {
-            width: 400px;
-        }
-    }
-
-    @media (--from-md) {
-        .profile-img {
-            width: 500px;
-        }
-    }
-
-    @media (width >= 1161px) {
-        .profile-img {
-            width: 550px;
-        }
-    }
-
-    @media (--till-md) {
-        h2 {
-            font-size: 30px;
-        }
-
-        h3 {
-            font-size: 17px;
-            max-width: 280px;
-        }
-
-        .profile-url {
-            font-size: 13px;
-        }
-
-        .banner :global(.badges) {
-            max-width: 280px;
+    @media (--from-xs) {
+        .profile-img img {
+            max-width: 410px;
+            width: 100%;
         }
     }
 </style>
