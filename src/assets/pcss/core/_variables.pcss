@@ -17,25 +17,20 @@ $color--text-light: #9d9d9d;
 $color--text-lighter: #e2e2e2;
 
 /* Layout and spacing */
+$breakpoints: (xs, sm, md, lg);
 $breakpoint-xs: 599px;
 $breakpoint-sm: 767px;
 $breakpoint-md: 1024px;
+$breakpoint-lg: 1144px;
 
 $gutter-size: 15px;
 $gutter-size-sm: 15px;
 
 $container-width: calc(1313px + $gutter-size * 2);
 
-$breakpoints: (
-    'xs': 599px,
-    'sm': 767px,
-    'md': 1024px
-);
-
 /*****************************
 * Custom media queries
 *****************************/
-
 @custom-media --till-xs (width <= $breakpoint-xs);
 @custom-media --from-xs (width > $breakpoint-xs);
 
@@ -51,5 +46,8 @@ $breakpoints: (
 
 @custom-media --till-container (width <= ($container-width));
 @custom-media --from-container (width > ($container-width));
+
+@custom-media --till-lg (width <= $breakpoint-lg);
+@custom-media --from-lg (width > $breakpoint-lg);
 
 @custom-media --ie-only (screen\0);
