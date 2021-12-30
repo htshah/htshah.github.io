@@ -172,6 +172,7 @@
         background: none;
         outline: none;
         padding: 0;
+        cursor: pointer;
     }
 
     @media (--from-sm) {
