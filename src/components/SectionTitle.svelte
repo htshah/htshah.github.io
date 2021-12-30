@@ -24,11 +24,8 @@
         text-transform: uppercase;
         color: $color--text-lighter;
 
-        font-size: 70px;
-        height: 58px;
-        line-height: 58px;
-
-        padding: 5px 5px 0 0;
+        font-size: 44px;
+        line-height: 1.1;
 
         user-select: none;
     }
@@ -37,13 +34,16 @@
         position: absolute;
         bottom: 0;
         left: 0;
+        right: 0;
 
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 600;
         text-transform: uppercase;
+        text-align: center;
         color: $color--primary;
+        line-height: 1.1;
 
-        line-height: 1;
+        transform: translateY(-8px);
     }
 
     @media (--from-md) {
