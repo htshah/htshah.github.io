@@ -90,6 +90,7 @@
     .banner :global(.badges) {
         max-width: 360px;
         margin-bottom: 11px;
+        justify-content: center;
     }
 
     @media (--from-xs) {
