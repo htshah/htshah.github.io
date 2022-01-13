@@ -45,7 +45,7 @@
         transform: translateY(-8px);
     }
 
-    @media (--from-xs) {
+    @media (--from-sm) {
         h2 {
             font-size: 60px;
         }
@@ -56,6 +56,19 @@
     }
 
     @media (--from-md) {
+        h2 {
+            font-size: 70px;
+            text-align: left;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: left;
+            transform: translateY(-13px);
+        }
+    }
+
+    @media (--from-container) {
         h2 {
             font-size: 100px;
         }
