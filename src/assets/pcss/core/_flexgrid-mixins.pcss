@@ -18,7 +18,7 @@
 @mixin flex-utils($name) {
     .start-$(name) {
         justify-content: flex-start;
-        text-align: start;
+        text-align: initial;
     }
 
     .center-$(name) {
@@ -31,6 +31,14 @@
         text-align: end;
     }
 
+    .around-$(name) {
+        justify-content: space-around;
+    }
+
+    .between-$(name) {
+        justify-content: space-between;
+    }
+
     .top-$(name) {
         align-items: flex-start;
     }
@@ -41,14 +49,6 @@
 
     .bottom-$(name) {
         align-items: flex-end;
-    }
-
-    .around-$(name) {
-        justify-content: space-around;
-    }
-
-    .between-$(name) {
-        justify-content: space-between;
     }
 }
 

@@ -91,7 +91,9 @@
         }
     } @else {
         @media (--from-$(name)) {
-            @include generate-columns-and-utils($name);
+            @if $name != container {
+                @include generate-columns-and-utils($name);
+            }
 
             .hidden-from-$(name) {
                 display: none !important;

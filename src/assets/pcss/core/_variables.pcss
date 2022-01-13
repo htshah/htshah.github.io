@@ -17,7 +17,7 @@ $color--text-light: #9d9d9d;
 $color--text-lighter: #e2e2e2;
 
 /* Layout and spacing */
-$breakpoints: (xs, sm, md, lg);
+$breakpoints: (xs, sm, md, container, lg);
 $breakpoint-xs: 520px;
 $breakpoint-sm: 767px;
 $breakpoint-md: 1024px;
@@ -32,22 +32,24 @@ $container-width: calc(1313px + $gutter-size * 2);
 * Custom media queries
 *****************************/
 @custom-media --till-xs (width <= $breakpoint-xs);
-@custom-media --from-xs (width > $breakpoint-xs);
+@custom-media --from-xs (width > 0);
 
-@custom-media --between-xs-sm ($breakpoint-xs < width <= $breakpoint-sm);
+@custom-media --between-xs-sm ($breakpoint-xs < width < $breakpoint-sm);
 
 @custom-media --till-sm (width <= $breakpoint-sm);
-@custom-media --from-sm (width > $breakpoint-sm);
+@custom-media --from-sm (width > $breakpoint-xs);
 
-@custom-media --between-sm-md ($breakpoint-sm < width <= $breakpoint-md);
+@custom-media --between-sm-md ($breakpoint-sm < width < $breakpoint-md);
 
 @custom-media --till-md (width <= $breakpoint-md);
-@custom-media --from-md (width > $breakpoint-md);
+@custom-media --from-md (width > $breakpoint-sm);
 
-@custom-media --till-container (width <= ($container-width));
-@custom-media --from-container (width > ($container-width));
+/* TODO Find a way to replace 1343px with $container-width */
+@custom-media --till-container (width <= 1343px);
+@custom-media --from-container (width > $breakpoint-md);
 
 @custom-media --till-lg (width <= $breakpoint-lg);
-@custom-media --from-lg (width > $breakpoint-lg);
+/* TODO Find a way to replace 1343px with $container-width */
+@custom-media --from-lg (width > 1343px);
 
 @custom-media --ie-only (screen\0);
