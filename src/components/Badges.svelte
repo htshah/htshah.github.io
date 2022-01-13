@@ -2,9 +2,9 @@
     export let list;
 </script>
 
-<ul class="row badges">
+<ul class="badges">
     {#each list as item}
-        <li>{item}</li>
+        <li><span>{item}</span></li>
     {/each}
 </ul>
 
@@ -18,13 +18,17 @@
     }
 
     li {
+        padding: 0 calc($badge-spacing / 2) $badge-spacing;
+    }
+
+    span {
+        display: inline-block;
         background: $color--accent-3-disabled;
         border-radius: 16px;
         font-size: 12px;
         line-height: 1.3;
         text-align: center;
         padding: 7px 15px;
-        margin: 0 calc($badge-spacing / 2) $badge-spacing;
         color: #000;
     }
 </style>
