@@ -81,7 +81,9 @@ module.exports = {
             disable: '@import',
         }),
 
-        postcssCalc(),
+        postcssCalc({
+            mediaQueries: true,
+        }),
 
         postcssNested(),
 
