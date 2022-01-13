@@ -7,11 +7,11 @@
 
 <div class="banner">
     <div class="container">
-        <div class="row center-xs middle-md">
-            <div class="col profile-img">
+        <div class="row center-xs between-md middle-sm">
+            <div class="col col-md-5 profile-img">
                 <img src="profile.png" alt="Het Shah" />
             </div>
-            <div class="col">
+            <div class="col col-md-7 start-md">
                 <SectionTitle title="Hey there!" subtitle="I&apos;m a" />
                 <h1>Full Stack Web Dev.</h1>
                 <h3>
@@ -20,7 +20,9 @@
                     from
                     <b class="primary__text">Northeastern Univ.</b>
                 </h3>
-                <Badges list={languages} />
+                <div class="row badges">
+                    <Badges list={languages} />
+                </div>
                 <a
                     href="https://www.linkedin.com/in/htshah"
                     class="profile-url"
@@ -37,7 +39,7 @@
     @import '../assets/pcss/core/_core-utils.pcss';
 
     .banner :global(.section-title) {
-        margin-bottom: 7px;
+        margin-bottom: 3px;
     }
     h1 {
         font-size: 25px;
@@ -45,7 +47,7 @@
         line-height: 1.3;
         text-transform: capitalize;
         color: #000;
-        margin-bottom: 8px;
+        margin-bottom: 13px;
     }
 
     h3 {
@@ -87,16 +89,43 @@
         }
     }
 
-    .banner :global(.badges) {
+    .badges {
         max-width: 360px;
-        margin-bottom: 11px;
-        justify-content: center;
+        margin: 0 auto 11px;
+
+        & :global(.badges) {
+            justify-content: center;
+        }
     }
 
     @media (--from-xs) {
         .profile-img img {
             max-width: 410px;
             width: 100%;
+        }
+    }
+
+    @media (--from-md) {
+        .profile-img {
+            order: 1;
+
+            img {
+                max-width: 100%;
+            }
+        }
+
+        h3 {
+            text-align: left;
+            margin-left: 0;
+        }
+
+        .badges {
+            margin-left: -7px;
+            margin-right: -7px;
+
+            & :global(.badges) {
+                justify-content: flex-start;
+            }
         }
     }
 </style>
