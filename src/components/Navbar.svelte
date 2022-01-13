@@ -65,7 +65,7 @@
                 </li>
             </ul>
 
-            <button class="hamburger hidden-from-sm">
+            <button class="hamburger hidden-from-md">
                 <Hamburger />
             </button>
         </div>
