@@ -47,24 +47,19 @@
 
     @media (--from-sm) {
         h2 {
-            font-size: 60px;
+            font-size: 72px;
         }
 
         p {
-            transform: translateY(-11px);
+            font-size: 18px;
+            transform: translateY(-14px);
         }
     }
 
     @media (--from-md) {
-        h2 {
-            font-size: 70px;
-            text-align: left;
-        }
-
+        h2,
         p {
-            font-size: 16px;
             text-align: left;
-            transform: translateY(-13px);
         }
     }
 
@@ -75,19 +70,7 @@
 
         p {
             font-size: 22px;
-            transform: translateY(-1px);
-        }
-    }
-
-    @media (width >= 1144px) {
-        h2 {
-            font-size: 120px;
-            height: 104px;
-            line-height: 120px;
-        }
-
-        p {
-            transform: translateY(2px);
+            transform: translateY(-19px);
         }
     }
 </style>
