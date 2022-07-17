@@ -54,5 +54,8 @@
         "sapper": "^0.29.3",
         "svelte": "^3.44",
         "svelte-preprocess": "^4.1.1"
+    },
+    "engines": {
+        "node": "16.13.1"
     }
 }
