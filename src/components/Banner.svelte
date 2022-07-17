@@ -8,13 +8,15 @@
 <div class="banner">
     <div class="container">
         <div class="row center-xs between-md middle-sm">
-            <div class="col col-md-5 profile-img">
-                <img src="profile.png" alt="Het Shah" />
+            <div class="col profile-img__wrap">
+                <div class="profile-img">
+                    <img src="profile.png" alt="Het Shah" />
+                </div>
             </div>
-            <div class="col col-md-7 start-md">
+            <div class="banner-body col start-md">
                 <SectionTitle title="Hey there!" subtitle="I&apos;m a" />
-                <h1>Full Stack Web Dev.</h1>
-                <h3>
+                <h1 class="profile-job-title">Full Stack Web Dev.</h1>
+                <h3 class="profile-currently">
                     Pursuing MS in
                     <b class="accent-2__text">Computer Science</b>
                     from
@@ -41,7 +43,8 @@
     .banner :global(.section-title) {
         margin-bottom: 3px;
     }
-    h1 {
+
+    .profile-job-title {
         font-size: 25px;
         font-weight: 700;
         line-height: 1.3;
@@ -50,7 +53,7 @@
         margin-bottom: 13px;
     }
 
-    h3 {
+    .profile-currently {
         &,
         & * {
             font-size: 16px;
@@ -81,12 +84,8 @@
     .profile-img {
         font-size: 0;
         margin-bottom: 18px;
-
-        & img {
-            max-width: 340px;
-            width: calc(100% - 20px);
-            transition: all 0.2s ease;
-        }
+        max-width: 340px;
+        transition: all 0.2s ease;
     }
 
     .badges {
@@ -99,33 +98,82 @@
     }
 
     @media (--from-xs) {
-        .profile-img img {
-            max-width: 410px;
-            width: 100%;
+        .profile-img {
+            max-width: 430px;
+        }
+    }
+
+    @media (--between-sm-md) {
+        .banner-body {
+            padding-top: 50px;
+            padding-bottom: 50px;
         }
     }
 
     @media (--from-md) {
-        .profile-img {
-            order: 1;
-
-            img {
-                max-width: 100%;
-            }
+        .banner-body {
+            flex: 1;
         }
 
-        h3 {
+        .profile-img__wrap {
+            order: 1;
+            max-width: 475px;
+            width: 40%;
+        }
+
+        .profile-img {
+            max-width: none;
+        }
+
+        .profile-job-title {
+            font-size: 32px;
+        }
+
+        .profile-currently {
+            &,
+            & * {
+                font-size: 20px;
+            }
+
+            max-width: 450px;
             text-align: left;
             margin-left: 0;
+        }
+
+        .profile-url {
+            font-size: 17px;
         }
 
         .badges {
             margin-left: -7px;
             margin-right: -7px;
+            max-width: 350px;
 
             & :global(.badges) {
                 justify-content: flex-start;
             }
+        }
+    }
+
+    @media (--from-container) {
+        .profile-currently {
+            &,
+            & * {
+                font-size: 25px;
+            }
+            max-width: 550px;
+        }
+
+        .profile-job-title {
+            font-size: 44px;
+        }
+
+        .profile-url {
+            font-size: 20px;
+        }
+
+        .badges {
+            max-width: 400px;
         }
     }
 </style>
