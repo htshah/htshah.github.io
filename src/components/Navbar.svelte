@@ -175,7 +175,7 @@
         cursor: pointer;
     }
 
-    @media (--from-sm) {
+    @media (--from-md) {
         .nav-container {
             height: 56px;
         }
