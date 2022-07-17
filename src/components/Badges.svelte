@@ -31,4 +31,12 @@
         padding: 7px 15px;
         color: #000;
     }
+
+    @media (--from-md) {
+        span {
+            border-radius: 30px;
+            font-size: 14px;
+            padding: 9px 19px;
+        }
+    }
 </style>
