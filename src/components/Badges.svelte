@@ -34,7 +34,14 @@
 
     @media (--from-md) {
         span {
+            font-size: 13px;
             border-radius: 30px;
+            padding: 8px 16px;
+        }
+    }
+
+    @media (--from-container) {
+        span {
             font-size: 14px;
             padding: 9px 19px;
         }
