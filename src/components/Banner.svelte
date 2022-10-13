@@ -15,12 +15,12 @@
             </div>
             <div class="banner-body col start-md">
                 <SectionTitle title="Hey there!" subtitle="I&apos;m a" />
-                <h1 class="profile-job-title">Full Stack Web Dev.</h1>
+                <h1 class="profile-job-title">Full Stack Web Dev</h1>
                 <h3 class="profile-currently">
                     Pursuing MS in
                     <b class="accent-2__text">Computer Science</b>
                     from
-                    <b class="primary__text">Northeastern Univ.</b>
+                    <b class="primary__text">Northeastern Univ</b>
                 </h3>
                 <div class="row badges">
                     <Badges list={languages} />
@@ -39,6 +39,10 @@
 
 <style>
     @import '../assets/pcss/core/_core-utils.pcss';
+
+    .banner {
+        margin-bottom: 30px;
+    }
 
     .banner :global(.section-title) {
         margin-bottom: 3px;
@@ -111,6 +115,10 @@
     }
 
     @media (--from-md) {
+        .banner {
+            margin-bottom: 50px;
+        }
+
         .banner-body {
             flex: 1;
         }
