@@ -85,10 +85,20 @@
         }
     }
 
+    .banner > .container {
+        background: linear-gradient(
+                180deg,
+                #ffffff 0%,
+                rgba(255, 255, 255, 0) 225px,
+                #ffffff 450px
+            ),
+            url('../pattern.png') repeat-x 0 0 / auto;
+    }
+
     .profile-img {
         font-size: 0;
         margin-bottom: 18px;
-        max-width: 340px;
+        max-width: 290px;
         transition: all 0.2s ease;
     }
 
@@ -103,7 +113,7 @@
 
     @media (--from-xs) {
         .profile-img {
-            max-width: 430px;
+            /* max-width: 430px; */
         }
     }
 
@@ -117,6 +127,9 @@
     @media (--from-md) {
         .banner {
             margin-bottom: 50px;
+        }
+        .banner > .container {
+            background: none;
         }
 
         .banner-body {
