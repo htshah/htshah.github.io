@@ -27,6 +27,7 @@
         line-height: 1.1;
 
         user-select: none;
+        text-align: center;
     }
 
     p {
