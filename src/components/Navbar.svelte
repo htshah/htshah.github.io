@@ -13,7 +13,7 @@
 <svelte:window bind:scrollY={y} bind:innerWidth={windowWidth} />
 
 <nav class:sticked={y > getScrollThreshold()}>
-    <div class="container">
+    <div class="container container-fluid">
         <div class="nav-container flex between-xs middle-xs">
             <h1>
                 <a href="/">

@@ -6,7 +6,7 @@
 </script>
 
 <div class="banner">
-    <div class="container">
+    <div class="container container-fluid">
         <div class="row center-xs between-md middle-sm">
             <div class="col profile-img__wrap">
                 <div class="profile-img">
@@ -14,24 +14,28 @@
                 </div>
             </div>
             <div class="banner-body col start-md">
-                <SectionTitle title="Hey there!" subtitle="I&apos;m a" />
-                <h1 class="profile-job-title">Full Stack Web Dev</h1>
-                <h3 class="profile-currently">
-                    Pursuing MS in
-                    <b class="accent-2__text">Computer Science</b>
-                    from
-                    <b class="primary__text">Northeastern Univ</b>
-                </h3>
-                <div class="row badges">
-                    <Badges list={languages} />
+                <div class="container">
+                    <SectionTitle subtitle="I&apos;m a">Hey there!</SectionTitle
+                    >
+                    <h1 class="profile-job-title">Full Stack Web Dev</h1>
+                    <h3 class="profile-currently">
+                        Pursuing MS in
+                        <b class="accent-2__text">Computer Science</b>
+                        from
+                        <b class="primary__text">Northeastern Univ</b>
+                    </h3>
+                    <div class="row badges">
+                        <!-- TODO: refactor to <Badge></Badge> -->
+                        <Badges list={languages} />
+                    </div>
+                    <a
+                        href="https://www.linkedin.com/in/htshah"
+                        class="profile-url"
+                        target="_blank"
+                    >
+                        linkedin.com/in/htshah
+                    </a>
                 </div>
-                <a
-                    href="https://www.linkedin.com/in/htshah"
-                    class="profile-url"
-                    target="_blank"
-                >
-                    linkedin.com/in/htshah
-                </a>
             </div>
         </div>
     </div>

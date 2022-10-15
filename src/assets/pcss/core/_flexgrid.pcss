@@ -21,6 +21,12 @@
     max-width: $container-width;
     margin-left: auto;
     margin-right: auto;
+
+    &:not(&-fluid) {
+        @media (--till-sm) {
+            max-width: $container-width-sm;
+        }
+    }
 }
 
 .flex {
