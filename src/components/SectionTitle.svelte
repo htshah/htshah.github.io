@@ -1,10 +1,9 @@
 <script>
-    export let title;
     export let subtitle;
 </script>
 
 <div class="section-title">
-    <h2>{title}</h2>
+    <h2><slot /></h2>
     <p>{subtitle}</p>
 </div>
 

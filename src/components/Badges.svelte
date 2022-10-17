@@ -32,7 +32,7 @@
         color: #000;
     }
 
-    @media (--from-md) {
+    @media (--from-sm) {
         span {
             font-size: 13px;
             border-radius: 30px;

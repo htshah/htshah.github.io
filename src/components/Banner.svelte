@@ -13,8 +13,8 @@
                     <img src="profile.png" alt="Het Shah" />
                 </div>
             </div>
-            <div class="banner-body col start-md">
-                <div class="container">
+            <div class="col-xs-12 banner-body col-md start-md">
+                <div class="container no-gutters">
                     <SectionTitle subtitle="I&apos;m a">Hey there!</SectionTitle
                     >
                     <h1 class="profile-job-title">Full Stack Web Dev</h1>
@@ -70,7 +70,7 @@
 
         font-weight: normal;
 
-        max-width: 360px;
+        max-width: 420px;
         text-align: center;
         color: $color--text-light;
 
@@ -115,9 +115,21 @@
         }
     }
 
-    @media (--from-xs) {
-        .profile-img {
-            /* max-width: 430px; */
+    @media (--from-sm) {
+        .profile-job-title {
+            font-size: 32px;
+        }
+
+        .profile-currently {
+            &,
+            & * {
+                font-size: 20px;
+            }
+
+            max-width: 450px;
+        }
+        .profile-url {
+            font-size: 18px;
         }
     }
 
@@ -150,17 +162,7 @@
             max-width: none;
         }
 
-        .profile-job-title {
-            font-size: 32px;
-        }
-
         .profile-currently {
-            &,
-            & * {
-                font-size: 20px;
-            }
-
-            max-width: 450px;
             text-align: left;
             margin-left: 0;
         }
