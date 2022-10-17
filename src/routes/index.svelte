@@ -1,4 +1,5 @@
 <script>
+    import AboutSection from '../components/AboutSection.svelte';
     import Banner from '../components/Banner.svelte';
 </script>
 
@@ -8,6 +9,9 @@
 
 <div class="main-wrapper">
     <Banner />
+
+    <!-- About -->
+    <AboutSection />
 </div>
 
 <style>
